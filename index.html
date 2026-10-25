@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GraDreCUP-top</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="loading">
+    <div class="loading-container">
+
+      <div class="loading-logo">
+        <img src="images/チームロゴ.PNG" alt="チームロゴ">
+      </div>
+
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="top-nav" aria-label="ページ移動">
+    <a href="teams.html">参加チーム</a>
+    <a href="bracket.html">対戦表</a>
+  </nav>
+
+  <div class="hero-scroll" id="heroScroll">
+    <section class="hero-section" id="hero">
+
+
+      <div class="sky-layer" id="skyLayer">
+        <svg id="starSvg" style="width:100%; height:100%;"></svg>
+        <div id="shootingLayer"></div>
+      </div>
+
+
+      <div class="hero-content" id="heroContent">
+        <div class="hero-inner">
+          <h1 style="margin-top: clamp(-80px, -9vw, -20px); margin-bottom: clamp(-20px, -2.2vw, -6px);"><img
+              src="images/GrabDreamCUP_011.png" alt="GranDreamCUP"
+              style="width: 75%; max-width: none; height: auto; display: block; margin: 0 auto;"></h1>
+          <p style="margin-top: clamp(-80px, -9vw, -20px);">GranDream presents</p>
+          <p>- 2026.11.28 sat -</p>
+        </div>
+      </div>
+
+
+      <div class="cloud-layer back" id="cloudBack">
+        <div class="cloud-drift back">
+          <svg class="clouds-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
+            <defs>
+              <filter id="cloud-glow-back" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="12" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+              <linearGradient id="cloud-grad-back" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#f8fafc" stop-opacity="1" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#cloud-grad-back)" filter="url(#cloud-glow-back)" d="
+            M -50,300
+            L -50,80
+            A 60,60 0 0,1 50,60
+            A 80,80 0 0,1 180,80
+            A 70,70 0 0,1 290,130
+            A 60,60 0 0,1 390,170
+            A 75,75 0 0,1 520,180
+            A 65,65 0 0,1 630,160
+            A 70,70 0 0,1 740,110
+            A 85,85 0 0,1 880,50
+            A 65,65 0 0,1 980,60
+            A 55,55 0 0,1 1050,100
+            L 1050,300 Z
+          "></path>
+          </svg>
+        </div>
+      </div>
+
+
+      <div class="cloud-layer front" id="cloudFront">
+        <div class="cloud-drift front">
+          <svg class="clouds-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
+            <defs>
+              <filter id="cloud-glow-front" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="12" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+              <linearGradient id="cloud-grad-front" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+                <stop offset="100%" stop-color="#f8fafc" stop-opacity="1" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#cloud-grad-front)" filter="url(#cloud-glow-front)" d="
+            M -50,300
+            L -50,110
+            A 65,65 0 0,1 60,75
+            A 75,75 0 0,1 190,105
+            A 60,60 0 0,1 280,150
+            A 70,70 0 0,1 400,195
+            A 80,80 0 0,1 540,205
+            A 65,65 0 0,1 650,180
+            A 75,75 0 0,1 770,120
+            A 90,90 0 0,1 920,65
+            A 60,60 0 0,1 1050,90
+            L 1050,300 Z
+          "></path>
+          </svg>
+        </div>
+        <div class="cloud-body">
+          <div class="overview">
+            <h2>開催概要</h2>
+            <dl>
+              <dt>タイトル</dt>
+              <dd>スプラトゥーン3</dd>
+              <dt>日時</dt>
+              <dd>2026年11月28日（土）</dd>
+              <dt>時間</dt>
+              <dd>開場 19:00 ／ 試合開始 19:30</dd>
+              <dt>チーム数</dt>
+              <dd>16チーム想定</dd>
+              <dt>XPコスト</dt>
+              <dd>チーム合計10400上限
+                <br>･XP3000以上は１名まで
+                <br>･全ルールでの最高XPを参照(サマリー提出)<br />
+              </dd>
+              <dt>参加資格</dt>
+              <dd>活動中の配信者に限り</dd>
+              <dt></dt>
+              <dd></dd>
+              <dt>主催</dt>
+              <dd>GranDream</dd>
+              <dt>申込</dt>
+              <dd>11月7日まで</dd>
+            </dl>
+            <p class="ov-link"><a href="https://energetic-octagon-8f6.notion.site/3f87bee7480a80aabf9cc22851b0c398"
+                target="_blank" rel="noopener noreferrer">大会詳細ルールブックを見る</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="next-section">
+    <div class="night" aria-hidden="true"><svg id="nightSvg" style="width:100%; height:100%; display:block;"></svg>
+    </div>
+
+
+    <div class="comment">
+      <div class="comment-inner">
+        <div class="timetable comment-text">
+          <h2>主催代表 あいさつ</h2>
+          <p class="cm-body">この度開催いたします「GranDreamCUP」は、他の大会にはない独自の要素や工夫を取り入れ、
+            <br>より多くの方に分かりやすく楽しんでいただける大会を目指しております。
+            <br>GranDreamメンバー一丸となり、最高の大会を作り上げてまいりますので、
+            <br>一人でも多くの方に知っていただき、盛り上がっていただければ幸いです。
+          </p>
+          <p class="cm-name"><small>GranDream</small>ありが</p>
+        </div>
+        <div class="cm-icon">
+          <div class="cm-icon-frame"><img src="images/ありが.png" alt="ありが"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tt-scroll" id="ttScroll">
+      <div class="tt-stage" id="ttStage">
+
+
+        <div class="timetable">
+          <h2>TIME TABLE</h2>
+          <ol class="tt-list" id="ttList">
+            <li class="tt-item"><span class="tt-dot"></span>
+              <p class="tt-label">開場</p>
+              <p class="tt-time">19:00</p>
+            </li>
+            <li class="tt-item"><span class="tt-dot"></span>
+              <p class="tt-label">予選グループ開始</p>
+              <p class="tt-time">19:30</p>
+            </li>
+            <li class="tt-item"><span class="tt-dot"></span>
+              <p class="tt-label">本戦開始</p>
+              <p class="tt-time">21:00</p>
+            </li>
+            <li class="tt-item tt-main"><span class="tt-dot"></span>
+              <p class="tt-label">決勝戦</p>
+              <p class="tt-time">23:00</p>
+            </li>
+          </ol>
+        </div>
+
+
+        <div class="tt-panels" id="ttPanels">
+          <article class="tt-panel">
+            <div class="tt-img"><img src="images/GranDreamCUP_title.png" alt="title"></div>
+            <p class="tt-ptime">19:00~</p>
+            <h3>開場</h3>
+            <p class="tt-text">
+            <h2>19時からYouTubeにて配信開始!!</h2>
+            <strong>【案内】</strong> 参加チームは19時10分目安にチェックイン<br>
+            <strong>【備考】</strong> 副配信はツイキャスの予定！
+            </p>
+          </article>
+          <article class="tt-panel">
+            <div class="tt-img"><img src="images/Groupleague_001.png" alt="Group"></div>
+            <p class="tt-ptime">19:30~</p>
+            <h3>予選グループ開始</h3>
+            <p class="tt-text">
+              <strong>【形式】</strong> 4チーム×4グループ（ダブルエリミネーション）<br>
+              <strong>【条件】</strong> 上位2チームが本戦進出<br>
+              <strong>【ルール】</strong> BO3（2本先取）/ Loser's Map Pick形式
+            </p>
+          </article>
+          <article class="tt-panel">
+            <div class="tt-img"><img src="images/league_002.png" alt="league"></div>
+            <p class="tt-ptime">21:00~</p>
+            <h3>本戦開始</h3>
+            <p class="tt-text">
+              <strong>【形式】</strong> 本戦トーナメント（予選通過8チーム）<br>
+              <strong>【アドバンテージ】</strong> 予選1位：Upper Bracket / 予選2位：Lower Bracket<br>
+              <strong>【ルール】</strong> BO3（2本先取）/ Loser's Map Pick形式
+            </p>
+          </article>
+          <article class="tt-panel">
+            <div class="tt-img"><img src="images/GranD_FINAL_CUP_image.png" alt="GranD_FINAL"></div>
+            <p class="tt-ptime">23:00~</p>
+            <h3>決勝戦</h3>
+            <p class="tt-text">
+              <strong>【対戦】</strong> Grand Final<br>
+              <strong>【アドバンテージ】</strong> 無敗側チーム：全マップの選択権<br>
+              <strong>【ルール】</strong> BO5（3本先取）
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="maps">
+      <div class="maps-inner">
+        <div class="timetable maps-head">
+          <h2>MAPS</h2>
+        </div>
+        <ul class="map-grid">
+          <li>
+            <div class="map-img"><img src=images\ナンプラー遺跡.JPG></div>
+            <p class="map-name"><span>01</span>ナンプラー遺跡</p>
+          </li>
+          <li>
+            <div class="map-img"><img src=images\ヤガラ市場.JPG></div>
+            <p class="map-name"><span>02</span>ヤガラ市場</p>
+          </li>
+          <li>
+            <div class="map-img"><img src=images\マテガイ放水路.JPG></div>
+            <p class="map-name"><span>03</span>マテガイ放水路</p>
+          </li>
+          <li>
+            <div class="map-img"><img src=images\クサヤ温泉.JPG></div>
+            <p class="map-name"><span>04</span>クサヤ温泉</p>
+          </li>
+          <li>
+            <div class="map-img"><img src=images\バイガイ亭.JPG></div>
+            <p class="map-name"><span>05</span>バイガイ亭</p>
+          </li>
+          <li>
+            <div class="map-img"><img src=images\タカアシ経済特区.JPG></div>
+            <p class="map-name"><span>06</span>タカアシ経済特区</p>
+          </li>
+          <li>
+            <div class="map-img"><img src=images\オヒョウ海運.JPG></div>
+            <p class="map-name"><span>07</span>オヒョウ海運</p>
+          </li>
+          <li>
+            <div class="map-img"><img src=images\ザトウマーケット.JPG></div>
+            <p class="map-name"><span>08</span>ザトウマーケット</p>
+          </li>
+          <li>
+            <div class="map-img"><img src=images\カジキ空港.JPG></div>
+            <p class="map-name"><span>09</span>カジキ空港</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="maps">
+      <div class="maps-inner">
+        <div class="timetable maps-head">
+          <h2> Loser's Map Pick形式 とは</h2>
+        </div>
+        <div>
+          <div class="tt-img"><img src="images/LMP.png" alt="Loser's Map Pick"></div>
+          <p class="cm-body" style="margin-top: 16px;">直前のマップで敗北したチームが、次のマップを選択できる形式です。
+            <br>● 1st MAP ： 全9マップから「おまかせ（ランダム）」で決定
+            <br>● 2nd MAP ： 1st MAPで敗北したチームが1st MAPで使用したマップを除く【残り8マップ】から選択
+            <br>● 3rd MAP ： 2nd MAPで敗北したチームが1st・2nd MAPで使用した2マップを除く【残り7マップ】から選択</p>
+          <p class="cm-body" style="color:#7577a6;">※2勝先取（BO3）形式のため、1st・2nd MAPで決着がついた場合、3rdMAPは実施されません（1-1の場合のみ実施）</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="maps">
+      <div class="maps-inner">
+        <div class="timetable maps-head">
+          <h2>ダブルエリミネーション とは</h2>
+        </div>
+        <div>
+          <div class="tt-img"><img src="images/esport.png" alt="esport"></div>
+          <h2 style="margin-top: 16px;">本大会はダブルエリミネーション方式を採用しています。</h2>
+          <p class="cm-body" style="margin-top: 16px;">2敗するまで敗退とならないトーナメントシステムです。
+            <br>参加者は1回負けてしまっても「ローワーブラケット」へ回ることで、そこから再び優勝を目指すチャンスが残されます。
+            <br>両ブラケットをそれぞれ勝ち上がったチーム同士が決勝戦で激突するため、
+            <br>実力が反映されやすく、ドラマチックな展開が生まれる方式として、多くのeスポーツやスポーツ大会で採用されています。
+          </p>
+          <p class="cm-body"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="maps">
+      <div class="maps-inner">
+        <div class="timetable maps-head">
+          <h2>お知らせ</h2>
+        </div>
+        <div>
+          <div class="tt-img ns" id="ns" role="region" aria-roledescription="carousel" aria-label="お知らせとイベント">
+            <div class="ns-track">
+
+              <a class="ns-slide" href="https://example.com/1" target="_blank" rel="noopener noreferrer">
+                <img src="images/告知動画サムネ.png" alt="告知動画" loading="lazy" onerror="this.remove()">
+                <span class="ns-cap"><b>告知動画を作成しました！</b><small>2026.10.25</small></span>
+              </a>
+              <!--<<a class="ns-slide" href="https://example.com/2" target="_blank" rel="noopener noreferrer">
+            <img src="images/news/news2.png" alt="" loading="lazy" onerror="this.remove()">
+            <span class="ns-cap"><b>無題のタイトル2</b><small>2026.10.10</small></span>
+          </a>
+          <a class="ns-slide" href="https://example.com/3" target="_blank" rel="noopener noreferrer">
+            <img src="images/news/news3.png" alt="" loading="lazy" onerror="this.remove()">
+            <span class="ns-cap"><b>お知らせのタイトル3</b><small>2026.10.20</small></span>
+          </a>-->
+            </div>
+            <button class="ns-btn ns-prev" type="button" aria-label="前へ">&#8249;</button>
+            <button class="ns-btn ns-next" type="button" aria-label="次へ">&#8250;</button>
+            <div class="ns-dots"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <footer class="site-footer">
+    <div class="ft-inner">
+      <div class="ft-brand">
+        <img src="images/チームロゴ.PNG" alt="GranDream">
+        <p class="ft-about">GranDream
+          は、スプラトゥーンをメインに<br>活動するコミュニティチームです。<br>日々の配信活動やゲーム企画などを通して、<br>プレイヤー同士の交流と挑戦を楽しんでいます。</p>
+        <a class="ft-x" href="https://x.com/GranDream_info" target="_blank" rel="noopener noreferrer"
+          aria-label="GranDream 公式X">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+          <span>@GranDream_info</span>
+        </a>
+      </div>
+      <div class="ft-cols">
+        <div class="ft-col">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="#">Top</a></li>
+            <li><a href="teams.html">参加チーム</a></li>
+            <li><a href="bracket.html">対戦表</a></li>
+            <li><a href="https://energetic-octagon-8f6.notion.site/3f87bee7480a80aabf9cc22851b0c398" target="_blank"
+                rel="noopener noreferrer">大会詳細ルールブック</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">募集フォーム</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <h3>運営メンバー</h3>
+          <ul class="ft-members">
+            <li><a href="https://x.com/ariga_sin" target="_blank" rel="noopener noreferrer">ありが</a></li>
+            <li><a href="https://x.com/amamiya_iyu" target="_blank" rel="noopener noreferrer">雨宮いゆ</a></li>
+            <li><a href="https://x.com/GreatStreamer" target="_blank" rel="noopener noreferrer">DON閣下</a></li>
+            <li><a href="https://x.com/Lisuka_0928" target="_blank" rel="noopener noreferrer">りすか</a></li>
+            <li><a href="https://x.com/starlightlaser" target="_blank" rel="noopener noreferrer">いっちー</a></li>
+            <li><a href="https://x.com/koro_56_6" target="_blank" rel="noopener noreferrer">ころろ</a></li>
+            <li><a href="https://x.com/Shocker_Rin" target="_blank" rel="noopener noreferrer">たくりん</a></li>
+            <li><a href="https://x.com/Raterate_222" target="_blank" rel="noopener noreferrer">らて</a></li>
+            <li><a href="https://x.com/orca2_2snow" target="_blank" rel="noopener noreferrer">あんぺあ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>本大会は非公式の大会であり、ゲームの権利者とは関係ありません。ゲームに関する画像・名称の権利は、各権利者に帰属します。</p>
+      <p>&copy; 2026 GranDream 編集部</p>
+    </div>
+  </footer>
+
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="画像の拡大表示">
+    <button type="button" aria-label="閉じる">&times;</button>
+    <img alt="">
+  </div>
+
+
+  <div class="cloud-stack" id="entryCloud">
+    <a class="entry-cloud" href="bracket.html">
+      <svg viewBox="0 0 220 130" aria-hidden="true">
+        <defs>
+          <linearGradient id="entry-grad-1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff" />
+            <stop offset="1" stop-color="#dbeafe" />
+          </linearGradient>
+        </defs>
+        <g fill="url(#entry-grad-1)">
+          <circle cx="58" cy="84" r="36" />
+          <circle cx="100" cy="58" r="44" />
+          <circle cx="146" cy="52" r="34" />
+          <circle cx="166" cy="86" r="34" />
+          <rect x="58" y="84" width="108" height="36" rx="18" />
+        </g>
+      </svg>
+      <span>対戦表</span>
+    </a>
+    <a class="entry-cloud" href="teams.html">
+      <svg viewBox="0 0 220 130" aria-hidden="true">
+        <defs>
+          <linearGradient id="entry-grad-2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff" />
+            <stop offset="1" stop-color="#dbeafe" />
+          </linearGradient>
+        </defs>
+        <g fill="url(#entry-grad-2)">
+          <circle cx="58" cy="84" r="36" />
+          <circle cx="100" cy="58" r="44" />
+          <circle cx="146" cy="52" r="34" />
+          <circle cx="166" cy="86" r="34" />
+          <rect x="58" y="84" width="108" height="36" rx="18" />
+        </g>
+      </svg>
+      <span>参加チーム</span>
+    </a>
+    <a class="entry-cloud"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSfmeNDX1Gga2eYNT3OFzbzkIkY0plx74DCnRTHlPIlkBXVrCw/viewform?usp=header"
+      target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 220 130" aria-hidden="true">
+        <defs>
+          <linearGradient id="entry-grad-3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff" />
+            <stop offset="1" stop-color="#dbeafe" />
+          </linearGradient>
+        </defs>
+        <g fill="url(#entry-grad-3)">
+          <circle cx="58" cy="84" r="36" />
+          <circle cx="100" cy="58" r="44" />
+          <circle cx="146" cy="52" r="34" />
+          <circle cx="166" cy="86" r="34" />
+          <rect x="58" y="84" width="108" height="36" rx="18" />
+        </g>
+      </svg>
+      <span>募集フォーム</span>
+    </a>
+  </div>
+
+  <script src="script.js" defer></script>
+
+</body>
+
+</html>
