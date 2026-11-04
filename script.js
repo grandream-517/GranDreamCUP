@@ -203,7 +203,7 @@ update();
 const lb = document.getElementById('lightbox');
 const lbImg = lb.querySelector('img');
 document.addEventListener('click', (e) => {
-const img = e.target.closest('.tt-img img, .map-img img');
+const img = e.target.closest('.tt-img:not(.ns) img, .map-img img');
 if (!img) return;
 lbImg.src = img.currentSrc || img.src;
 lbImg.alt = img.alt;
