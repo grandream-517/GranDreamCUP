@@ -214,7 +214,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb.classLi
 ['wheel', 'touchmove'].forEach(t => lb.addEventListener(t, (e) => e.preventDefault(), { passive: false }));
 
 (() => {
-const INTERVAL = 5000;
+const INTERVAL = 6000;
 const root = document.getElementById('ns');
 const track = root.querySelector('.ns-track');
 const dotsBox = root.querySelector('.ns-dots');
