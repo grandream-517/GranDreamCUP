@@ -12,7 +12,7 @@
   a:focus-visible { outline:2px solid var(--mint); outline-offset:3px; }
   ul, ol { list-style:none; }
 
-  
+  /* 夜空：オーロラのような淡い色の滲み＋静止した星。動かない */
   .sky {
     position:fixed; inset:0; z-index:-1;
     background:
@@ -78,48 +78,163 @@
   main { max-width:1100px; margin:0 auto; padding:0 clamp(16px,4vw,32px) 80px; }
   section + section { margin-top:clamp(56px,10vh,96px); }
   h2 { text-align:center; font-size:clamp(1.3rem,5vw,1.7rem); font-weight:400; letter-spacing:.3em; text-indent:.3em; }
-  h2::after { content:'✦'; display:block; margin-top:8px; color:var(--pink); font-size:.9rem; letter-spacing:0; text-indent:0; }
-  .lead { margin:16px auto 0; max-width:36em; text-align:center; color:var(--mute); font-size:.92rem; }
+  .lead { margin:16px auto 0; max-width:36em; text-align:center; color:var(--mute); font-size:1.5rem; }
 
   .card { background:rgba(255,255,255,.055); border:1px solid var(--line); border-radius:14px; padding:20px; backdrop-filter:blur(6px); }
   .card h3 { font-size:1.05rem; font-weight:600; letter-spacing:.12em; margin-bottom:12px; color:var(--lav); }
 
   footer { text-align:center; padding:40px 20px calc(32px + env(safe-area-inset-bottom,0px)); font-size:.75rem; color:var(--mute); }
 
+  .teams {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+    width: min(94vw, 1520px); 
+    margin-top: 48px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-.tt-container {
-  display: flex;
-  justify-content: center; 
+  @media (max-width: 1100px) {
+    .teams {
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+      left: auto;
+      transform: none;
+    }
+  }
+
+  .team {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding: 32px 32px 34px;
+  }
+
+  .team-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .logo {
+    flex: none;
+    width: 104px;
+    height: 104px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: linear-gradient(135deg, rgba(190, 215, 255, .2), rgba(255, 255, 255, .06));
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+  }
+
+  .logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+  }
+
+  .team-text {
+    min-width: 0;
+  }
+
+  .card .team-name {
+    margin: 0;
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: 1.4;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+
+  .team-name::after {
+  content: '';
+  display: block;
   width: 100%;
-  box-sizing: border-box;
+  height: 1px;
+  margin: 12px 0 14px;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.7), rgba(255, 255, 255, 0.08));
 }
 
+  .team-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--mute);
+  }
 
-.tt-img {
-  aspect-ratio: 16 / 9;
-  width: min(100%, calc(52vh * 16 / 9));
-  width: min(100%, calc(52svh * 16 / 9));
-  flex-shrink: 0;          
-  border-radius: 14px;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #bae6fd, #e0f2fe);
-  color: #64748b;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  transition: background 0.4s;
+  .members {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .mem {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: linear-gradient(160deg, rgba(190, 215, 255, .22), rgba(255, 255, 255, .05));
+  }
+
+  .mem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .mem figcaption {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    writing-mode: vertical-rl;
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    color: #effffe;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 1);
+  }
+
+  @media (max-width: 520px) {
+    .team { padding: 20px 18px 22px; gap: 18px; }
+    .logo { width: 68px; height: 68px; }
+    .card .team-name { font-size: 1.2rem; }
+    .team-desc { font-size: .85rem; }
+    .members { gap: 8px; }
+    .mem figcaption { font-size: .65rem; top: 6px; left: 4px; }
+  }
+
+
+.lead strong {
+  display: inline-block;
+  font-size: 1.8em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  margin: 0.25em 0;
+
+  background: linear-gradient(135deg, #fff6d6 0%, #d4af37 50%, #f3e5ab 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter:
+    drop-shadow( 1px  1px 0 rgba(255, 255, 255, 0.2))
+    drop-shadow(-1px  1px 0 rgba(255, 255, 255, 0.2))
+    drop-shadow( 1px -1px 0 rgba(255, 255, 255, 0.2))
+    drop-shadow(-1px -1px 0 rgba(255, 255, 255, 0.2))
 }
 
-.tt-img img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  display: block; 
+@media (max-width: 520px) {
+  .lead strong {
+    font-size: 1.45em;
+  }
 }
-
-
-
 </style>
 </head>
 <body>
@@ -129,11 +244,152 @@
   <a href="bracket.html">対戦表</a>
 </header>
 
-<div class="tt-container">
-  <div class="tt-img"><img src="images/coming soon.png" alt="coming">
-    </div>
+<div class="title">
+  <h1>参加チーム</h1>
+  <p>GraDreCUP　2026.11.28 sat</p>
 </div>
 
-</body>
+<main>
+  <section>
+    <h2 class="lead">13チーム、52の魂が交錯する至高の舞台。
+      <br>様々なプラットフォームの配信者たちが、栄光の頂
+      <br><strong>『GranDreamCUP』</strong>
+      <br>の称号をかけて、ここに集結する。</h2>
+    <div class="teams">
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">†断罪-Judgement†</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">†全員断罪します†</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/nanamilk_live"><img src="images\001_†断罪-Judgement†\ななみるく.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ななみるく</figcaption></a></figure><figure class="mem"><a href="https://x.com/miihon3"><img src="images\001_†断罪-Judgement†\ミイホン.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ミイホン</figcaption></a></figure><figure class="mem"><a href="https://x.com/Tsukimi_leo"><img src="images\001_†断罪-Judgement†\月見月・レオ＝ウルフェカ.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>月見月・レオ＝ウルフェカ</figcaption></a></figure><figure class="mem"><a href="https://x.com/ei_zZzZz"><img src="images\001_†断罪-Judgement†\えい.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>えい</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">Moon Dream</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">みんなで頑張って勝ちます！！</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/ShirakumaEve"><img src="images\002_Moon Dream\白熊イヴ.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>白熊イヴ</figcaption></a></figure><figure class="mem"><a href="https://x.com/oborozukizen"><img src="images\002_Moon Dream\朧月然.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>朧月然</figcaption></a></figure><figure class="mem"><a href="https://x.com/nobuo831?s=11&t=eA88Wf8yZ-s6RXIbqruVGQ"><img src="images\002_Moon Dream\のぶお.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>のぶお</figcaption></a></figure><figure class="mem"><a href="https://x.com/MitsukiKuroko_v"><img src="images\002_Moon Dream\三月黒狐.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>三月黒狐</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">激突ほのか軍団📯</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">絶対勝ちます</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/_Neetnina"><img src="images\003_激突ほのか軍団📯\新都にーな.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>新都にーな</figcaption></a></figure><figure class="mem"><a href="https://x.com/LoLeLu_R"><img src="images\003_激突ほのか軍団📯\ロレルリラ.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ロレルリラ</figcaption></a></figure><figure class="mem"><a href="https://x.com/ash_hiromu"><img src="images\003_激突ほのか軍団📯\hiromu.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>hiromu</figcaption></a></figure><figure class="mem"><a href="https://x.com/Salmon_H_"><img src="images\003_激突ほのか軍団📯\しゃけみゃほのか。.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>しゃけみゃほのか。</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">LAST LAUGH</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">がんばります</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/otomori_chiruha"><img src="images\004_LAST LAUGH\音社ちるは.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>音社ちるは</figcaption></a></figure><figure class="mem"><a href="https://x.com/koshiro_cas"><img src="images\004_LAST LAUGH\こちろ.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>こちろ</figcaption></a></figure><figure class="mem"><a href="https://x.com/suzu4plus"><img src="images\004_LAST LAUGH\鈴猫.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>鈴猫</figcaption></a></figure><figure class="mem"><a href="https://x.com/seldom3331"><img src="images\004_LAST LAUGH\うえだ.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>うえだ</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">SP4</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">なにかの武器もって楽しみます！！！お楽しみに</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/Marutun1008"><img src="images\005_SP4\まるつん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>まるつん</figcaption></a></figure><figure class="mem"><a href="https://x.com/ryuzi_game"><img src="images\005_SP4\りゅーじ☆.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>りゅーじ☆</figcaption></a></figure><figure class="mem"><a href="https://x.com/miduki_1326"><img src="images\005_SP4\えすくん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>えすくん</figcaption></a></figure><figure class="mem"><a href="https://x.com/1902_Crows"><img src="images\005_SP4\るしあん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>るしあん</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">星のアトリエ</h3>
+            <p class="team-desc">GranDreamCupを盛り上げに来ました！！<br>最高のイラストを描くぞ〜！！</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/otocafeart_hnk2"><img src="images\006_星のアトリエ\ほのぴ.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ほのぴ</figcaption></a></figure><figure class="mem"><a href="https://x.com/kmdbhkn_t"><img src="images\006_星のアトリエ\ありえる.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ありえる</figcaption></a></figure><figure class="mem"><a href="https://x.com/ramu_ch_"><img src="images\006_星のアトリエ\ラム.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ラム</figcaption></a></figure><figure class="mem"><a href="https://x.com/taishi05"><img src="images\006_星のアトリエ\taishi.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>taishi</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">Blue Force</h3>
+            <p class="team-desc">グラドリ杯を盛り上げるためにメンバーを集め練習に励んできました！<br>Blue Forceが頂点(てっぺん)取ったるわい‼️</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/Koamaru1020"><img src="images\007_Blue Force\コアまる。.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>コアまる。</figcaption></a></figure><figure class="mem"><a href="https://x.com/shun_shun_1111"><img src="images\007_Blue Force\しゅん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>しゅん</figcaption></a></figure><figure class="mem"><a href="https://x.com/Mabo_Ondore_"><img src="images\007_Blue Force\まぼてゃん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>まぼてゃん</figcaption></a></figure><figure class="mem"><a href="https://x.com/ichi_ru_09"><img src="images\007_Blue Force\一縷るあ.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>一縷るあ</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">しろもふ四獣士</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">トぶぞ、もふれ</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/shiraume_meu"><img src="images/008_しろもふ四獣士/白梅めう.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>白梅めう</figcaption></a></figure><figure class="mem"><a href="https://x.com/teragon1117"><img src="images/008_しろもふ四獣士/てらごん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>てらごん</figcaption></a></figure><figure class="mem"><a href="https://x.com/zaki85poteto"><img src="images/008_しろもふ四獣士/ざきぽて.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ざきぽて</figcaption></a></figure><figure class="mem"><a href="https://x.com/Kosen_Miraira"><img src="images/008_しろもふ四獣士/狐仙心愛羅.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>狐仙心愛羅</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">だいたい3さい</h3>
+            <p class="team-desc">縁あって集まった我がチームはだいたい3さいなので<br>無邪気にどのチームよりも楽しみます</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/mahiru8sh_game"><img src="images\009_だいたい3さい\りんご.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>りんご</figcaption></a></figure><figure class="mem"><a href="https://x.com/HamazarasHina"><img src="images\009_だいたい3さい\はまひな.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>はまひな</figcaption></a></figure><figure class="mem"><a href="https://x.com/yuyusi_daro"><img src="images\009_だいたい3さい\ゆゆし.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ゆゆし</figcaption></a></figure><figure class="mem"><a href="https://x.com/0_0mmj"><img src="images\009_だいたい3さい\もみじぃ.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>もみじぃ</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">ALMOST PRO</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">全員で大会を楽しんで一勝でも多く勝利したいです</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/kosetarou"><img src="images\010_ALMOST PRO\れふと.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>れふと</figcaption></a></figure><figure class="mem"><a href="https://x.com/howaito_3134"><img src="images\010_ALMOST PRO\ホワイト.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ホワイト</figcaption></a></figure><figure class="mem"><a href="https://x.com/Pippi121212"><img src="images\010_ALMOST PRO\たんしー.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>たんしー</figcaption></a></figure><figure class="mem"><a href="https://x.com/tohru2318"><img src="images\010_ALMOST PRO\とおる.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>とおる</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">あすぱらがすんすん</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">チクチクあらがっていくよ♡</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/sunsun_0312"><img src="images\011_あすぱらがすんすん\スンスン.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>スンスン</figcaption></a></figure><figure class="mem"><a href="https://x.com/Tnamoti0624"><img src="images\011_あすぱらがすんすん\ぽ嫁.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ぽ嫁</figcaption></a></figure><figure class="mem"><a href="https://x.com/Riko_0925"><img src="images\011_あすぱらがすんすん\Riko.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>Riko</figcaption></a></figure><figure class="mem"><a href="https://x.com/svb_chunpi"><img src="images\011_あすぱらがすんすん\ちるり.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>ちるり</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">惑星大爆発</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">楽しくのびのびとがんばるぞ〜！！</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/sizuk3141592"><img src="images\012_惑星大爆発\しずく.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>しずく</figcaption></a></figure><figure class="mem"><a href="https://x.com/camellia_1115"><img src="images\012_惑星大爆発\りみね.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>りみね</figcaption></a></figure><figure class="mem"><a href="https://x.com/Niena0305"><img src="images\012_惑星大爆発\にーな.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>にーな</figcaption></a></figure><figure class="mem"><a href="https://x.com/shion_hhyg0815"><img src="images\012_惑星大爆発\しおん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>しおん</figcaption></a></figure></div>
+      </article>
+      <article class="card team">
+        <div class="team-head">
+          <div class="logo"><img src="images\装飾\グリーン.png" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="team-text">
+            <h3 class="team-name">卸嬢様々方々(仮)</h3>
+            <p class="team-desc" style="margin-bottom: 2em;">みんなでボコボコにして、優勝勝ち取ります！</p>
+          </div>
+        </div>
+        <div class="members"><figure class="mem"><a href="https://x.com/mi_nyan4"><img src="images\013_北の万次郎\みーにゃん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>みーにゃん</figcaption></a></figure><figure class="mem"><a href="https://x.com/cosu_gathering"><img src="images\013_北の万次郎\コス♭.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>コス♭</figcaption></a></figure><figure class="mem"><a href="https://x.com/messiah_vtuber"><img src="images\013_北の万次郎\五十嵐ミーシア.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>五十嵐ミーシア</figcaption></a></figure><figure class="mem"><a href="https://x.com/Shocker_Rin"><img src="images\013_北の万次郎\たくりん.png" alt="" loading="lazy" onerror="this.remove()"><figcaption>たくりん</figcaption></a></figure></div>
+      </article>
+    </div>
+  </section>
+</main>
 
 <footer>&copy; 2026 GranDream 編集部</footer>
+</body>
+</html>
