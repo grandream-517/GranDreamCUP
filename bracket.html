@@ -175,6 +175,130 @@
   .slot.lose { opacity:.55; }
 
   footer { text-align:center; padding:40px 20px calc(32px + env(safe-area-inset-bottom,0px)); font-size:.75rem; color:var(--mute); }
+
+.gb.rr3 {
+  --cw: 210px;
+  --gap: 36px;
+  --rk-gap: 48px; 
+  grid-template-columns: repeat(3, var(--cw)) 130px;
+  grid-template-rows: auto auto;
+  column-gap: var(--gap);
+  row-gap: 14px;
+  padding-bottom: 42px; 
+}
+
+.gb.rr3 .t1,
+.gb.rr3 .t2,
+.gb.rr3 .t3,
+.gb.rr3 .m1,
+.gb.rr3 .m2,
+.gb.rr3 .m3,
+.gb.rr3 .r1,
+.gb.rr3 .r2 {
+  grid-area: auto;
+  margin-top: 0;
+}
+
+.gb.rr3 .tm {
+  margin-bottom: 14px;
+}
+
+.gb.rr3 .m1,
+.gb.rr3 .m2,
+.gb.rr3 .m3 {
+  align-self: start;
+  margin-top: 0;
+}
+.gb.rr3 .m1 { grid-column: 1; grid-row: 2; }
+.gb.rr3 .m2 { grid-column: 2; grid-row: 2; }
+.gb.rr3 .m3 { grid-column: 3; grid-row: 2; }
+
+.gb.rr3 .r1,
+.gb.rr3 .r2 {
+  grid-column: 4;
+  grid-row: 2;
+  margin-left: var(--rk-gap);
+  width: 130px;
+}
+
+.gb.rr3 .r1 {
+  align-self: start;
+  margin-top: 0;
+}
+
+.gb.rr3 .r2 {
+  align-self: start; 
+  margin-top: 76px;  
+  margin-bottom: 0;
+}
+
+.gb.rr3 .rk-name {
+  white-space: nowrap;
+}
+
+.gb.rr3 .g1::before,
+.gb.rr3 .g1::after,
+.gb.rr3 .m3 .sl::after,
+.gb.rr3 .m4 .sl::after,
+.gb.rr3 .m5 .sl::after {
+  display: none;
+}
+
+.rr-wrap {
+  margin-top: 18px;
+  
+  margin-left: calc(var(--cw, 80px) + var(--gap, 36px));
+  overflow-x: auto;
+}
+
+.rr-matrix {
+  width: 100%;
+  max-width: 560px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: rgba(var(--tint, 143, 193, 255), .12);
+  border: 1.5px solid rgba(255, 255, 255, .75);
+}
+
+.rr-matrix th,
+.rr-matrix td {
+  position: relative;
+  height: 44px;
+  padding: 0 8px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1.5px solid rgba(255, 255, 255, .75);
+  font-size: .85rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rr-matrix thead th {
+  background: rgba(var(--tint, 143, 193, 255), .22);
+}
+
+.rr-matrix tbody th {
+  background: rgba(var(--tint, 143, 193, 255), .18);
+}
+
+.rr-matrix .diag {
+  background:
+    linear-gradient(
+      to top right,
+      transparent calc(50% - 1px),
+      rgba(255, 255, 255, .75) calc(50% - 1px),
+      rgba(255, 255, 255, .75) calc(50% + 1px),
+      transparent calc(50% + 1px)
+    );
+}
+
+.rr-matrix td.is-placeholder {
+  color: rgba(255, 255, 255, .45);
+  font-weight: 500;
+}
 </style>
 </head>
 <body>
@@ -193,10 +317,14 @@
 <main>
   <section id="prelim">
     <h2>予選</h2>
-    <p class="lead">16チームが4つのグループに分かれ、ダブルエリミネーションで戦います。<br>全試合BO3で、各グループの上位2チームが本戦へ進みます。</p>
+    <p class="lead">13チームが4つのブロックに分かれて予選を行い
+      <br>各ブロックの上位2チームが本戦へ進みます。</p>
+      <p class="lead">ベテルギウス ：ダブルエリミネーション（Bo3）
+      <br>シリウス ／ プロキオン ／ ポラリス ：3チームの総当たりリーグ（3本勝負）
+      <br>全試合 : Loser's Map Pick形式</p>
     <div class="groups">
       <details class="card grp g-red">
-        <summary><h3>ベテルギウス</h3></summary>
+        <summary><h3>ベテルギウス　　　　　各マッチ Bo3(2本先取)</h3></summary>
         <div class="scroll"><div class="gb">
           <h4 class="tm t1">20:30~</h4><h4 class="tm t2">21:00~</h4><h4 class="tm t3">21:30~</h4>
           <div class="g1"><div class="gm " data-match="GA_Match1"><p class="gl">Match1</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><b>A-1</b>チーム名</span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><b>A-2</b>チーム名</span><i class="pt"></i></div></div></div><div class="gm " data-match="GA_Match2"><p class="gl">Match2</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><b>A-3</b>チーム名</span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><b>A-4</b>チーム名</span><i class="pt"></i></div></div></div></div>
@@ -208,54 +336,221 @@
         <p class="adv">#1（Match3の勝者）と#2（Match5の勝者）が本戦へ進みます。</p>
       </details>
       <details class="card grp g-blue">
-        <summary><h3>シリウス</h3></summary>
-        <div class="scroll"><div class="gb">
-          <h4 class="tm t1">20:30~</h4><h4 class="tm t2">21:00~</h4><h4 class="tm t3">21:30~</h4>
-          <div class="g1"><div class="gm " data-match="GB_Match1"><p class="gl">Match1</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><b>B-1</b>チーム名</span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><b>B-2</b>チーム名</span><i class="pt"></i></div></div></div><div class="gm " data-match="GB_Match2"><p class="gl">Match2</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><b>B-3</b>チーム名</span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><b>B-4</b>チーム名</span><i class="pt"></i></div></div></div></div>
-          <div class="gm m3" data-match="GB_Match3"><p class="gl">Match3</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match1の勝者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match2の勝者</span></span><i class="pt"></i></div></div></div>
-          <div class="gm m4" data-match="GB_Match4"><p class="gl">Match4</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match1の敗者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match2の敗者</span></span><i class="pt"></i></div></div></div>
-          <div class="gm m5" data-match="GB_Match5"><p class="gl">Match5</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match3の敗者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match4の勝者</span></span><i class="pt"></i></div></div></div>
-          <div class="rk r1" data-rank="GB_Match3">#1<span class="rk-name"></span></div><div class="rk r2" data-rank="GB_Match5">#2<span class="rk-name"></span></div>
-        </div></div>
-        <p class="adv">#1（Match3の勝者）と#2（Match5の勝者）が本戦へ進みます。</p>
-      </details>
+  <summary><h3>シリウス　　　　　　　各マッチ 3本勝負</h3></summary>
+  <div class="scroll"><div class="gb rr3">
+    <h4 class="tm t1">20:30~</h4><h4 class="tm t2">21:00~</h4><h4 class="tm t3">21:30~</h4>
+
+    <div class="gm m1" data-match="GB_Match1">
+      <p class="gl">Match1</p>
+      <div class="sl">
+        <div class="slot" data-side="A"><span class="nm"><b>B-1</b>チーム名</span><i class="pt"></i></div>
+        <div class="slot" data-side="B"><span class="nm"><b>B-2</b>チーム名</span><i class="pt"></i></div>
+      </div>
+    </div>
+
+    <div class="gm m2" data-match="GB_Match2">
+      <p class="gl">Match2</p>
+      <div class="sl">
+        <div class="slot" data-side="A"><span class="nm"><b>B-2</b>チーム名</span><i class="pt"></i></div>
+        <div class="slot" data-side="B"><span class="nm"><b>B-3</b>チーム名</span><i class="pt"></i></div>
+      </div>
+    </div>
+
+    <div class="gm m3" data-match="GB_Match3">
+      <p class="gl">Match3</p>
+      <div class="sl">
+        <div class="slot" data-side="A"><span class="nm"><b>B-1</b>チーム名</span><i class="pt"></i></div>
+        <div class="slot" data-side="B"><span class="nm"><b>B-3</b>チーム名</span><i class="pt"></i></div>
+      </div>
+    </div>
+
+    
+    <div class="rk r1" data-rank="1">#1<span class="rk-name"></span></div>
+    <div class="rk r2" data-rank="2">#2<span class="rk-name"></span></div>
+  </div></div>
+
+  
+<div class="rr-wrap">
+  <table class="rr-matrix">
+    <thead>
+      <tr>
+        <th class="diag" aria-label="対戦相手"></th>
+        <th><span class="nm"><b>B-1</b><span class="team">チーム名</span></span></th>
+        <th><span class="nm"><b>B-2</b><span class="team">チーム名</span></span></th>
+        <th><span class="nm"><b>B-3</b><span class="team">チーム名</span></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th><span class="nm"><b>B-1</b><span class="team">チーム名</span></span></th>
+        <td class="diag" aria-hidden="true"></td>
+        <td data-cell="1-2"></td>
+        <td data-cell="1-3"></td>
+      </tr>
+      <tr>
+        <th><span class="nm"><b>B-2</b><span class="team">チーム名</span></span></th>
+        <td data-cell="2-1"></td>
+        <td class="diag" aria-hidden="true"></td>
+        <td data-cell="2-3"></td>
+      </tr>
+      <tr>
+        <th><span class="nm"><b>B-3</b><span class="team">チーム名</span></span></th>
+        <td data-cell="3-1"></td>
+        <td data-cell="3-2"></td>
+        <td class="diag" aria-hidden="true"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="adv">3チーム総当たり戦の上位2チーム（#1・#2）が本戦進出（同率時は 獲得MAP数 ＞ ノックアウト本数 ＞ 抽選 で決定）</p>
+</details>
       <details class="card grp g-yellow">
-        <summary><h3>プロキオン</h3></summary>
-        <div class="scroll"><div class="gb">
-          <h4 class="tm t1">20:30~</h4><h4 class="tm t2">21:00~</h4><h4 class="tm t3">21:30~</h4>
-          <div class="g1"><div class="gm " data-match="GC_Match1"><p class="gl">Match1</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><b>C-1</b>チーム名</span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><b>C-2</b>チーム名</span><i class="pt"></i></div></div></div><div class="gm " data-match="GC_Match2"><p class="gl">Match2</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><b>C-3</b>チーム名</span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><b>C-4</b>チーム名</span><i class="pt"></i></div></div></div></div>
-          <div class="gm m3" data-match="GC_Match3"><p class="gl">Match3</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match1の勝者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match2の勝者</span></span><i class="pt"></i></div></div></div>
-          <div class="gm m4" data-match="GC_Match4"><p class="gl">Match4</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match1の敗者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match2の敗者</span></span><i class="pt"></i></div></div></div>
-          <div class="gm m5" data-match="GC_Match5"><p class="gl">Match5</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match3の敗者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match4の勝者</span></span><i class="pt"></i></div></div></div>
-          <div class="rk r1" data-rank="GC_Match3">#1<span class="rk-name"></span></div><div class="rk r2" data-rank="GC_Match5">#2<span class="rk-name"></span></div>
-        </div></div>
-        <p class="adv">#1（Match3の勝者）と#2（Match5の勝者）が本戦へ進みます。</p>
+        <summary><h3>プロキオン　　　　　　各マッチ 3本勝負</h3></summary>
+        <div class="scroll">
+          <div class="gb rr3" data-group="GC">
+            <h4 class="tm t1">20:30~</h4><h4 class="tm t2">21:00~</h4><h4 class="tm t3">21:30~</h4>
+            <div class="gm m1" data-match="GC_Match1">
+              <p class="gl">Match1</p>
+              <div class="sl">
+                <div class="slot" data-side="A"><span class="nm"><b>C-1</b>チーム名</span><i class="pt"></i></div>
+                <div class="slot" data-side="B"><span class="nm"><b>C-2</b>チーム名</span><i class="pt"></i></div>
+              </div>
+            </div>
+            <div class="gm m2" data-match="GC_Match2">
+              <p class="gl">Match2</p>
+              <div class="sl">
+                <div class="slot" data-side="A"><span class="nm"><b>C-2</b>チーム名</span><i class="pt"></i></div>
+                <div class="slot" data-side="B"><span class="nm"><b>C-3</b>チーム名</span><i class="pt"></i></div>
+              </div>
+            </div>
+            <div class="gm m3" data-match="GC_Match3">
+              <p class="gl">Match3</p>
+              <div class="sl">
+                <div class="slot" data-side="A"><span class="nm"><b>C-1</b>チーム名</span><i class="pt"></i></div>
+                <div class="slot" data-side="B"><span class="nm"><b>C-3</b>チーム名</span><i class="pt"></i></div>
+              </div>
+            </div>
+            <div class="rk r1" data-rank="1">#1<span class="rk-name"></span></div>
+            <div class="rk r2" data-rank="2">#2<span class="rk-name"></span></div>
+          </div>
+
+          <div class="rr-wrap">
+            <table class="rr-matrix">
+              <thead>
+                <tr>
+                  <th class="diag" aria-label="対戦相手"></th>
+                  <th><span class="nm"><b>C-1</b><span class="team">チーム名</span></span></th>
+                  <th><span class="nm"><b>C-2</b><span class="team">チーム名</span></span></th>
+                  <th><span class="nm"><b>C-3</b><span class="team">チーム名</span></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><span class="nm"><b>C-1</b><span class="team">チーム名</span></span></th>
+                  <td class="diag" aria-hidden="true"></td>
+                  <td data-cell="1-2"></td>
+                  <td data-cell="1-3"></td>
+                </tr>
+                <tr>
+                  <th><span class="nm"><b>C-2</b><span class="team">チーム名</span></span></th>
+                  <td data-cell="2-1"></td>
+                  <td class="diag" aria-hidden="true"></td>
+                  <td data-cell="2-3"></td>
+                </tr>
+                <tr>
+                  <th><span class="nm"><b>C-3</b><span class="team">チーム名</span></span></th>
+                  <td data-cell="3-1"></td>
+                  <td data-cell="3-2"></td>
+                  <td class="diag" aria-hidden="true"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="adv">3チーム総当たり戦の上位2チーム（#1・#2）が本戦進出（同率時は 獲得MAP数 &gt; ノックアウト本数 &gt; 抽選 で決定）</p>
       </details>
+
       <details class="card grp g-purple">
-        <summary><h3>ポラリス</h3></summary>
-        <div class="scroll"><div class="gb">
-          <h4 class="tm t1">20:30~</h4><h4 class="tm t2">21:00~</h4><h4 class="tm t3">21:30~</h4>
-          <div class="g1"><div class="gm " data-match="GD_Match1"><p class="gl">Match1</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><b>D-1</b>チーム名</span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><b>D-2</b>チーム名</span><i class="pt"></i></div></div></div><div class="gm " data-match="GD_Match2"><p class="gl">Match2</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><b>D-3</b>チーム名</span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><b>D-4</b>チーム名</span><i class="pt"></i></div></div></div></div>
-          <div class="gm m3" data-match="GD_Match3"><p class="gl">Match3</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match1の勝者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match2の勝者</span></span><i class="pt"></i></div></div></div>
-          <div class="gm m4" data-match="GD_Match4"><p class="gl">Match4</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match1の敗者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match2の敗者</span></span><i class="pt"></i></div></div></div>
-          <div class="gm m5" data-match="GD_Match5"><p class="gl">Match5</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match3の敗者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match4の勝者</span></span><i class="pt"></i></div></div></div>
-          <div class="rk r1" data-rank="GD_Match3">#1<span class="rk-name"></span></div><div class="rk r2" data-rank="GD_Match5">#2<span class="rk-name"></span></div>
-        </div></div>
-        <p class="adv">#1（Match3の勝者）と#2（Match5の勝者）が本戦へ進みます。</p>
+        <summary><h3>ポラリス　　　　　　　各マッチ 3本勝負</h3></summary>
+        <div class="scroll">
+          <div class="gb rr3" data-group="GD">
+            <h4 class="tm t1">20:30~</h4><h4 class="tm t2">21:00~</h4><h4 class="tm t3">21:30~</h4>
+            <div class="gm m1" data-match="GD_Match1">
+              <p class="gl">Match1</p>
+              <div class="sl">
+                <div class="slot" data-side="A"><span class="nm"><b>D-1</b>チーム名</span><i class="pt"></i></div>
+                <div class="slot" data-side="B"><span class="nm"><b>D-2</b>チーム名</span><i class="pt"></i></div>
+              </div>
+            </div>
+            <div class="gm m2" data-match="GD_Match2">
+              <p class="gl">Match2</p>
+              <div class="sl">
+                <div class="slot" data-side="A"><span class="nm"><b>D-2</b>チーム名</span><i class="pt"></i></div>
+                <div class="slot" data-side="B"><span class="nm"><b>D-3</b>チーム名</span><i class="pt"></i></div>
+              </div>
+            </div>
+            <div class="gm m3" data-match="GD_Match3">
+              <p class="gl">Match3</p>
+              <div class="sl">
+                <div class="slot" data-side="A"><span class="nm"><b>D-1</b>チーム名</span><i class="pt"></i></div>
+                <div class="slot" data-side="B"><span class="nm"><b>D-3</b>チーム名</span><i class="pt"></i></div>
+              </div>
+            </div>
+            <div class="rk r1" data-rank="1">#1<span class="rk-name"></span></div>
+            <div class="rk r2" data-rank="2">#2<span class="rk-name"></span></div>
+          </div>
+
+          <div class="rr-wrap">
+            <table class="rr-matrix">
+              <thead>
+                <tr>
+                  <th class="diag" aria-label="対戦相手"></th>
+                  <th><span class="nm"><b>D-1</b><span class="team">チーム名</span></span></th>
+                  <th><span class="nm"><b>D-2</b><span class="team">チーム名</span></span></th>
+                  <th><span class="nm"><b>D-3</b><span class="team">チーム名</span></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><span class="nm"><b>D-1</b><span class="team">チーム名</span></span></th>
+                  <td class="diag" aria-hidden="true"></td>
+                  <td data-cell="1-2"></td>
+                  <td data-cell="1-3"></td>
+                </tr>
+                <tr>
+                  <th><span class="nm"><b>D-2</b><span class="team">チーム名</span></span></th>
+                  <td data-cell="2-1"></td>
+                  <td class="diag" aria-hidden="true"></td>
+                  <td data-cell="2-3"></td>
+                </tr>
+                <tr>
+                  <th><span class="nm"><b>D-3</b><span class="team">チーム名</span></span></th>
+                  <td data-cell="3-1"></td>
+                  <td data-cell="3-2"></td>
+                  <td class="diag" aria-hidden="true"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="adv">3チーム総当たり戦の上位2チーム（#1・#2）が本戦進出（同率時は 獲得MAP数 &gt; ノックアウト本数 &gt; 抽選 で決定）</p>
       </details>
+    </div>
+  </section>
     </div>
   </section>
 
   <section id="finals">
     <h2>本戦</h2>
-    <p class="lead">予選1位の4チームはアッパーブラケット、<br>予選2位の4チームはローワーブラケットから始まります。<br>決勝戦のみBO5です。</p>
+    <p class="lead">予選1位の4チームはアッパーブラケット、<br>予選2位の4チームはローワーブラケットから始まります。<br>試合形式 : Bo3 / Loser's Map Pick<br>決勝戦のみBo5です。</p>
     <div class="bracket">
       <article class="card grp g-green">
         <h3>本戦トーナメント</h3>
         <div class="scroll"><div class="fb">
           <div class="br br-u" aria-hidden="true"><span>アッパーブラケット</span></div>
           <div class="br br-l" aria-hidden="true"><span>ローワーブラケット</span></div>
-          <h4 class="tm t1">22:00~</h4><h4 class="tm t2">22:30~</h4><h4 class="tm t3">23:00~</h4><h4 class="tm t4">23:30~</h4><h4 class="tm t5">24:00~</h4>
+          <h4 class="tm t1">21:00~</h4><h4 class="tm t2">21:30~</h4><h4 class="tm t3">22:00~</h4><h4 class="tm t4">22:30~</h4><h4 class="tm t5">23:00~</h4>
           <div class="gbk u1" style="--ext:calc(var(--gap) / 2 + var(--cw) + var(--gap))"><div class="gm " data-match="Match6"><p class="gl">Match6</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">ベテルギウス #1</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">シリウス　　 #1</span></span><i class="pt"></i></div></div></div><div class="gm " data-match="Match7"><p class="gl">Match7</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">プロキオン　 #1</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">ポラリス　　 #1</span></span><i class="pt"></i></div></div></div></div>
           <div class="gm uf" data-match="Match12"><p class="gl">Match12</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match6の勝者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match7の勝者</span></span><i class="pt"></i></div></div></div>
           <div class="gm gf" data-match="Match15" data-win="3"><p class="gl">決勝戦 GrandFinal</p><div class="sl"><div class="slot" data-side="A"><span class="nm"><span class="rule">Match12の勝者</span></span><i class="pt"></i></div><div class="slot" data-side="B"><span class="nm"><span class="rule">Match14の勝者</span></span><i class="pt"></i></div></div></div>
@@ -273,60 +568,186 @@
 
 <footer>&copy; 2026 GranDream 編集部</footer>
 <script>
-  // =====================================================================
-  // スプレッドシート連携の設定
-  // =====================================================================
-  const API_URL    = 'https://script.google.com/macros/s/AKfycbzbb0sd0yzjf-rP-agEZRDMnBPPlqEqArWxUkFZuuefOomMjlAM3Q0mc7KPbYC7NPb2/exec'; // GAS の Web アプリ URL（/exec で終わるもの）
-  const REFRESH_MS = 30000; // 自動更新の間隔（ミリ秒）。30000 = 30秒
-  const WIN_SCORE  = 2;     // 何本先取で勝ちか（BO3 なら 2）。決勝戦だけは HTML の data-win="3"（BO5）で上書き
 
-  // 未確定を表す文字列（空、または GA_Match1_winner / Match6_loser のような仮の文字）は「まだ決まっていない」として扱う
+  const API_URL    = 'https://script.google.com/macros/s/AKfycbzbb0sd0yzjf-rP-agEZRDMnBPPlqEqArWxUkFZuuefOomMjlAM3Q0mc7KPbYC7NPb2/exec';
+  const REFRESH_MS = 10000;
+  const WIN_SCORE  = 2;
+
   const isUndecided = (n) => !n || /_(winner|loser)$/i.test(String(n).trim());
-  const clean = (n) => (isUndecided(n) ? '' : String(n).trim());
-  const toNum = (v) => (v === '' || v == null || isNaN(Number(v)) ? null : Number(v));
+  const clean       = (n) => (isUndecided(n) ? '' : String(n).trim());
+  const toNum       = (v) => (v === '' || v == null || isNaN(Number(v)) ? null : Number(v));
 
-  // 勝者を返す（'A' / 'B' / null）。どちらかが need 本に達して、点数が違うときだけ確定
   function winnerOf(m, need = WIN_SCORE) {
     const a = toNum(m.scoreA), b = toNum(m.scoreB);
     if (a === null || b === null || a === b || Math.max(a, b) < need) return null;
     return a > b ? 'A' : 'B';
   }
 
-  // 最初に書かれていた表示（シード名・「Match1の勝者」など）を覚えておく
-  document.querySelectorAll('.slot').forEach(s => { s.dataset.ph = s.querySelector('.nm').innerHTML; });
-  document.querySelectorAll('.rk-name').forEach(e => { e.dataset.ph = e.textContent; });
+  document.querySelectorAll('.slot').forEach(s => {
+    s.dataset.ph = s.querySelector('.nm').innerHTML;
+  });
+  document.querySelectorAll('.rk-name').forEach(e => {
+    e.dataset.ph = e.textContent;
+  });
+  document.querySelectorAll('.rr-matrix th').forEach(th => {
+    if (th.querySelector('b')) th.dataset.ph = th.innerHTML;
+  });
 
-  function setName(slot, name) {
+  function setSlotName(slot, name) {
     const nm = slot.querySelector('.nm');
-    if (!name) { nm.innerHTML = slot.dataset.ph; return; }       // 未確定 → 元の表示に戻す
-    nm.textContent = '';
-    const seed = /<b>(.*?)<\/b>/.exec(slot.dataset.ph);          // A-1 などのシード名は残す
-    if (seed) { const b = document.createElement('b'); b.textContent = seed[1]; nm.appendChild(b); }
-    const t = document.createElement('span'); t.className = 'team'; t.textContent = name; nm.appendChild(t);
+    if (!name) {
+      nm.innerHTML = slot.dataset.ph;
+      return;
+    }
+    const t = document.createElement('span');
+    t.className = 'team';
+    t.textContent = name;
+    nm.replaceChildren(t);
   }
 
-  function render(data) {
+  function getSeedFromSlot(slot) {
+    const currentB = slot.querySelector('.nm b')?.textContent?.trim();
+    if (currentB) return currentB;
+    const match = /<b>(.*?)<\/b>/.exec(slot.dataset.ph || '');
+    return match ? match[1].trim() : '';
+  }
+
+  function getGroupPrefix(rrContainer) {
+    if (rrContainer.dataset.group) return rrContainer.dataset.group.trim();
+    const firstMatch = rrContainer.querySelector('[data-match]')?.dataset.match || '';
+    return firstMatch.split('_')[0] || 'GB';
+  }
+
+  function renderMatchesAndRanks(data) {
     document.querySelectorAll('[data-match]').forEach(el => {
       const m = data[el.dataset.match] || {};
       const w = winnerOf(m, Number(el.dataset.win) || WIN_SCORE);
       el.querySelectorAll('.slot').forEach(slot => {
         const side = slot.dataset.side;
-        setName(slot, clean(m['team' + side]));
+        setSlotName(slot, clean(m['team' + side]));
         slot.querySelector('.pt').textContent = m['score' + side] ?? '';
         slot.classList.toggle('win', w === side);
         slot.classList.toggle('lose', !!w && w !== side);
       });
     });
-    // #1・#2 の下のチーム名（Match3 / Match5 の勝者）
+
     document.querySelectorAll('[data-rank]').forEach(el => {
+      if (el.closest('.gb.rr3')) return;
+      const rkName = el.querySelector('.rk-name');
+      if (!rkName) return;
       const m = data[el.dataset.rank] || {};
       const w = winnerOf(m);
-      el.querySelector('.rk-name').textContent = (w && clean(m['team' + w])) || el.querySelector('.rk-name').dataset.ph;
+      rkName.textContent = (w && clean(m['team' + w])) || rkName.dataset.ph;
     });
   }
 
+  function renderRoundRobinMatrices(data = {}) {
+    document.querySelectorAll('.gb.rr3').forEach(rrContainer => {
+      const matrix = rrContainer.parentElement?.querySelector('.rr-matrix') || document.querySelector('.rr-matrix');
+      if (!matrix) return;
+
+      const prefix = getGroupPrefix(rrContainer);
+      const teamBySeed = new Map();
+      const seedByTeamName = new Map();
+
+      rrContainer.querySelectorAll('.slot').forEach(slot => {
+        const seed = getSeedFromSlot(slot);
+        const teamName = slot.querySelector('.nm .team')?.textContent?.trim();
+        if (seed && teamName) {
+          teamBySeed.set(seed, teamName);
+          seedByTeamName.set(teamName, seed);
+        }
+      });
+
+      matrix.querySelectorAll('th[data-ph]').forEach(th => {
+        const match = /<b>(.*?)<\/b>/.exec(th.dataset.ph);
+        const seed = match ? match[1].trim() : '';
+        const teamName = teamBySeed.get(seed);
+
+        if (!teamName) {
+          th.innerHTML = th.dataset.ph;
+          return;
+        }
+        const t = document.createElement('span');
+        t.className = 'team';
+        t.textContent = teamName;
+        th.replaceChildren(t);
+      });
+
+      const cellText = new Map();
+      const cellPlaceholder = new Map();
+
+      [1, 2, 3].forEach(num => {
+        const matchId = `${prefix}_Match${num}`;
+        const m = data[matchId] || {};
+        const matchEl = rrContainer.querySelector(`[data-match="${matchId}"]`);
+
+        const seedA = clean(m.teamA)
+          ? seedByTeamName.get(clean(m.teamA))
+          : (matchEl ? getSeedFromSlot(matchEl.querySelector('.slot[data-side="A"]')) : '');
+        const seedB = clean(m.teamB)
+          ? seedByTeamName.get(clean(m.teamB))
+          : (matchEl ? getSeedFromSlot(matchEl.querySelector('.slot[data-side="B"]')) : '');
+
+        const numA = seedA?.replace(/[^\d]/g, '');
+        const numB = seedB?.replace(/[^\d]/g, '');
+        if (!numA || !numB) return;
+
+        const label = `Match${num}`;
+        cellPlaceholder.set(`${numA}-${numB}`, label);
+        cellPlaceholder.set(`${numB}-${numA}`, label);
+
+        const sA = toNum(m.scoreA);
+        const sB = toNum(m.scoreB);
+        if (sA === null || sB === null) return;
+
+        cellText.set(`${numA}-${numB}`, `${sA} - ${sB}`);
+        cellText.set(`${numB}-${numA}`, `${sB} - ${sA}`);
+      });
+
+      matrix.querySelectorAll('td[data-cell]').forEach(td => {
+        const key = td.dataset.cell;
+        if (cellText.has(key)) {
+          td.textContent = cellText.get(key);
+          td.classList.remove('is-placeholder');
+        } else if (cellPlaceholder.has(key)) {
+          td.textContent = cellPlaceholder.get(key);
+          td.classList.add('is-placeholder');
+        } else {
+          td.textContent = '';
+          td.classList.remove('is-placeholder');
+        }
+      });
+    });
+  }
+
+  function renderRoundRobinRanks(data = {}) {
+    document.querySelectorAll('.gb.rr3').forEach(rrContainer => {
+      const prefix = getGroupPrefix(rrContainer);
+      const grpRank = data[`${prefix}_Rank`];
+      if (!grpRank) return;
+
+      const targets = [
+        { sel: '.rk[data-rank="1"] .rk-name', val: clean(grpRank.teamA) },
+        { sel: '.rk[data-rank="2"] .rk-name', val: clean(grpRank.scoreA) }
+      ];
+
+      targets.forEach(({ sel, val }) => {
+        const el = rrContainer.querySelector(sel);
+        if (!el) return;
+        el.textContent = val || el.dataset.ph;
+      });
+    });
+  }
+
+  function render(data) {
+    renderMatchesAndRanks(data);
+    renderRoundRobinMatrices(data);
+    renderRoundRobinRanks(data);
+  }
+
   async function load() {
-    if (document.hidden || API_URL.includes('ここに')) return;   // 非表示のタブ・URL未設定のときは取りに行かない
+    if (document.hidden || API_URL.includes('ここに')) return;
     try {
       const res = await fetch(API_URL, { cache: 'no-store' });
       render(await res.json());
@@ -334,6 +755,7 @@
       console.warn('対戦表データを取得できませんでした（前回の表示のままにします）', e);
     }
   }
+
   load();
   setInterval(load, REFRESH_MS);
 </script>
