@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リーグ&チーム公開.26/11/22 | GraDreCUP</title>
+
+  <meta property="og:title" content="【GranDreamCUP】リーグ振り分け&参加チーム公開" />
+  <meta property="og:description" content="リーグ振り分け&参加チームを公開しました。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://grandream-517.github.io/GranDreamCUP/261122info.html" />
+  <meta property="og:image" content="https://grandream-517.github.io/GranDreamCUP/images/お知らせ_003.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="【GranDreamCUP】リーグ振り分け&参加チーム公開" />
+  <meta name="twitter:description" content="リーグ振り分け&参加チームを公開しました。" />
+  <meta name="twitter:image" content="https://grandream-517.github.io/GranDreamCUP/images/お知らせ_003.png" />
+</head>
+<style>
+  :root { --ink:#e8f0ff; --mute:#aab9d8; --line:rgba(190,215,255,.28); --mint:#c7eded; --pink:#f9b4d4; --lav:#cdbdff; --gold:#ffe2a8; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Helvetica Neue',Arial,'Hiragino Sans','Yu Gothic',sans-serif; color:var(--ink); line-height:1.7; background:#0b1d3a; }
+  a { color:inherit; }
+  a:focus-visible { outline:2px solid var(--mint); outline-offset:3px; }
+  ul, ol { list-style:none; }
+
+  
+  .sky {
+    position:fixed; inset:0; z-index:-1;
+    background:
+      radial-gradient(60vmax 30vmax at 12% 18%, rgba(205,189,255,.24), transparent 70%),
+      radial-gradient(50vmax 28vmax at 88% 38%, rgba(249,180,212,.17), transparent 70%),
+      radial-gradient(70vmax 30vmax at 38% 88%, rgba(199,237,237,.17), transparent 70%),
+      radial-gradient(circle at 59% 73%, rgba(255,255,255,0.82) 0, rgba(255,255,255,0.29) 2px, transparent 5.6px),
+      radial-gradient(circle at 59% 67%, rgba(255,255,255,0.82) 0, rgba(255,255,255,0.29) 1px, transparent 2.8px),
+      radial-gradient(circle at 25% 67%, rgba(255,255,255,0.61) 0, rgba(255,255,255,0.21) 1px, transparent 2.8px),
+      radial-gradient(circle at 14% 59%, rgba(255,255,255,0.52) 0, rgba(255,255,255,0.18) 1px, transparent 2.8px),
+      radial-gradient(circle at 70% 90%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0.24) 2px, transparent 5.6px),
+      radial-gradient(circle at 59% 85%, rgba(255,255,255,0.76) 0, rgba(255,255,255,0.27) 1px, transparent 2.8px),
+      radial-gradient(circle at 81% 3%, rgba(255,255,255,0.81) 0, rgba(255,255,255,0.28) 1px, transparent 2.8px),
+      radial-gradient(circle at 9% 6%, rgba(255,255,255,0.45) 0, rgba(255,255,255,0.16) 1px, transparent 2.8px),
+      radial-gradient(circle at 78% 5%, rgba(255,255,255,0.78) 0, rgba(255,255,255,0.27) 1.5px, transparent 4.2px),
+      radial-gradient(circle at 58% 77%, rgba(255,255,255,0.81) 0, rgba(255,255,255,0.28) 1px, transparent 2.8px),
+      radial-gradient(circle at 83% 39%, rgba(255,255,255,0.62) 0, rgba(255,255,255,0.22) 1px, transparent 2.8px),
+      radial-gradient(circle at 60% 85%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.17) 1px, transparent 2.8px),
+      radial-gradient(circle at 92% 34%, rgba(255,255,255,0.52) 0, rgba(255,255,255,0.18) 1px, transparent 2.8px),
+      radial-gradient(circle at 67% 38%, rgba(255,255,255,0.37) 0, rgba(255,255,255,0.13) 1px, transparent 2.8px),
+      radial-gradient(circle at 53% 15%, rgba(255,255,255,0.82) 0, rgba(255,255,255,0.29) 2px, transparent 5.6px),
+      radial-gradient(circle at 10% 4%, rgba(255,255,255,0.82) 0, rgba(255,255,255,0.29) 1px, transparent 2.8px),
+      radial-gradient(circle at 29% 28%, rgba(255,255,255,0.86) 0, rgba(255,255,255,0.3) 1px, transparent 2.8px),
+      radial-gradient(circle at 62% 50%, rgba(255,255,255,0.89) 0, rgba(255,255,255,0.31) 2px, transparent 5.6px),
+      radial-gradient(circle at 55% 11%, rgba(255,255,255,0.66) 0, rgba(255,255,255,0.23) 1px, transparent 2.8px),
+      radial-gradient(circle at 88% 36%, rgba(255,255,255,0.54) 0, rgba(255,255,255,0.19) 1.5px, transparent 4.2px),
+      radial-gradient(circle at 44% 3%, rgba(255,255,255,0.88) 0, rgba(255,255,255,0.31) 1px, transparent 2.8px),
+      radial-gradient(circle at 19% 33%, rgba(255,255,255,0.74) 0, rgba(255,255,255,0.26) 1px, transparent 2.8px),
+      radial-gradient(circle at 9% 61%, rgba(255,255,255,0.79) 0, rgba(255,255,255,0.28) 1px, transparent 2.8px),
+      radial-gradient(circle at 89% 73%, rgba(255,255,255,0.45) 0, rgba(255,255,255,0.16) 1px, transparent 2.8px),
+      radial-gradient(circle at 95% 18%, rgba(255,255,255,0.58) 0, rgba(255,255,255,0.2) 2px, transparent 5.6px),
+      radial-gradient(circle at 16% 52%, rgba(255,255,255,0.58) 0, rgba(255,255,255,0.2) 1px, transparent 2.8px),
+      radial-gradient(circle at 2% 36%, rgba(255,255,255,0.83) 0, rgba(255,255,255,0.29) 1.5px, transparent 4.2px),
+      radial-gradient(circle at 4% 28%, rgba(255,255,255,0.45) 0, rgba(255,255,255,0.16) 1px, transparent 2.8px),
+      radial-gradient(circle at 7% 20%, rgba(255,255,255,0.47) 0, rgba(255,255,255,0.16) 1.5px, transparent 4.2px),
+      radial-gradient(circle at 3% 80%, rgba(255,255,255,0.53) 0, rgba(255,255,255,0.19) 1.5px, transparent 4.2px),
+      radial-gradient(circle at 51% 11%, rgba(255,255,255,0.39) 0, rgba(255,255,255,0.14) 1px, transparent 2.8px),
+      radial-gradient(circle at 76% 83%, rgba(255,255,255,0.48) 0, rgba(255,255,255,0.17) 1.5px, transparent 4.2px),
+      radial-gradient(circle at 49% 81%, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.21) 2px, transparent 5.6px),
+      radial-gradient(circle at 75% 19%, rgba(255,255,255,0.83) 0, rgba(255,255,255,0.29) 1px, transparent 2.8px),
+      radial-gradient(circle at 82% 21%, rgba(255,255,255,0.52) 0, rgba(255,255,255,0.18) 1px, transparent 2.8px),
+      radial-gradient(circle at 80% 33%, rgba(255,255,255,0.75) 0, rgba(255,255,255,0.26) 1px, transparent 2.8px),
+      radial-gradient(circle at 96% 82%, rgba(255,255,255,0.87) 0, rgba(255,255,255,0.3) 1px, transparent 2.8px),
+      radial-gradient(circle at 89% 51%, rgba(255,255,255,0.84) 0, rgba(255,255,255,0.29) 1px, transparent 2.8px),
+      radial-gradient(circle at 55% 8%, rgba(255,255,255,0.41) 0, rgba(255,255,255,0.14) 1px, transparent 2.8px),
+      radial-gradient(circle at 67% 34%, rgba(255,255,255,0.48) 0, rgba(255,255,255,0.17) 2px, transparent 5.6px),
+      radial-gradient(circle at 34% 55%, rgba(255,255,255,0.8) 0, rgba(255,255,255,0.28) 2px, transparent 5.6px),
+      radial-gradient(circle at 39% 68%, rgba(255,255,255,0.45) 0, rgba(255,255,255,0.16) 1px, transparent 2.8px),
+      radial-gradient(circle at 18% 31%, rgba(255,255,255,0.61) 0, rgba(255,255,255,0.21) 1px, transparent 2.8px),
+      radial-gradient(circle at 37% 29%, rgba(255,255,255,0.85) 0, rgba(255,255,255,0.3) 1px, transparent 2.8px),
+      radial-gradient(circle at 97% 4%, rgba(255,255,255,0.39) 0, rgba(255,255,255,0.14) 2px, transparent 5.6px),
+      radial-gradient(circle at 59% 33%, rgba(255,255,255,0.38) 0, rgba(255,255,255,0.13) 1px, transparent 2.8px),
+      linear-gradient(180deg,#0d2042 0%,#122b56 40%,#17386c 75%,#1e4782 100%);
+  }
+
+  .bar { display:flex; justify-content:space-between; padding:clamp(14px,3vh,28px) clamp(16px,3vw,40px); font-size:.9rem; letter-spacing:.16em; }
+  .bar a { text-decoration:none; padding-bottom:4px; border-bottom:1px solid rgba(255,255,255,.4); text-shadow:0 1px 8px rgba(8,20,42,.6); }
+
+  .title { text-align:center; padding:clamp(40px,10vh,100px) 20px clamp(32px,7vh,64px); }
+  .title h1 { font-size:clamp(2.2rem,9vw,4rem); font-weight:300; letter-spacing:.32em; text-indent:.32em; text-shadow:0 0 28px rgba(205,189,255,.55); }
+  .title p { margin-top:14px; color:var(--mint); letter-spacing:.14em; font-size:clamp(.85rem,3.4vw,1rem); }
+
+  main { max-width:1100px; margin:0 auto; padding:0 clamp(16px,4vw,32px) 80px; }
+  section + section { margin-top:clamp(56px,10vh,96px); }
+  h2 { text-align:center; font-size:clamp(1.3rem,5vw,1.7rem); font-weight:400; letter-spacing:.3em; text-indent:.3em; }
+  /*h2::after { content:'✦'; display:block; margin-top:8px; color:var(--pink); font-size:.9rem; letter-spacing:0; text-indent:0; }*/
+  .lead { margin:16px auto 0; max-width:36em; text-align:center; color:var(--mute); font-size:.92rem; }
+
+  .card { background:rgba(255,255,255,.055); border:1px solid var(--line); border-radius:14px; padding:20px; backdrop-filter:blur(6px); }
+  .card h3 { font-size:1.05rem; font-weight:600; letter-spacing:.12em; margin-bottom:12px; color:var(--lav); }
+
+  footer { text-align:center; padding:40px 20px calc(32px + env(safe-area-inset-bottom,0px)); font-size:.75rem; color:var(--mute); }
+
+
+.tt-container {
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.tt-img {
+  aspect-ratio: 16 / 9;
+  width: min(100%, calc(52vh * 16 / 9));
+  width: min(100%, calc(52svh * 16 / 9));
+  flex-shrink: 0;          
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #bae6fd, #e0f2fe);
+  color: #64748b;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: background 0.4s;
+}
+
+.tt-img img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+}
+
+.divider-text {
+  border-bottom: 1px dashed #8a5a2b; 
+  padding-bottom: 15px;          
+  margin-bottom: 15px;           
+}
+
+.notice {
+  --ink: #4a2a10;
+  --accent: #8a5a2b;
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2.25rem 1.75rem 2.5rem;
+  color: var(--ink);
+  font-family: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  line-height: 1.9;
+  background: linear-gradient(170deg, #fdf3dc 0%, #f4e0b5 60%, #e6c98f 100%);
+  border: 2px solid #8a5a2b;
+  box-shadow: 0 6px 18px rgba(60, 35, 10, 0.3);
+}
+
+
+.notice::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(138, 90, 43, 0.6);
+  pointer-events: none;
+}
+
+.notice-label {
+  margin: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+.notice-title {
+  margin: 0.5rem 0 0.4rem;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: #5a2a0a;
+}
+
+.notice-date {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #a08060;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(138, 90, 43, 0.3);
+}
+
+.notice-body p { margin: 0 0 1.1rem; }
+.notice-lead { font-weight: 700; }
+
+
+.notice-deadline {
+  margin: 1.5rem 0;
+  padding: 1rem 1rem 0.9rem;
+  text-align: center;
+  background: rgba(200, 160, 100, 0.25);
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+}
+.notice-deadline p { margin: 0; }
+.notice-deadline-label { font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+.notice-deadline-date { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.05em; margin: 0.3rem 0; }
+.notice-deadline-note { font-size: 0.72rem; color: var(--accent); }
+
+
+.notice-button {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0;
+  padding: 0.8rem 2rem;
+  color: #fdf3dc;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(#7a3f12, #5e2d0a);
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(60, 25, 5, 0.4);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.notice-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(60, 25, 5, 0.5);
+}
+
+
+.discord-parchment-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 0;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #7A4B1A, #4A2E0E);
+  color: #FCEFD2;
+  font-family: "Shippori Mincho", "游明朝", serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #C8A261;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.discord-parchment-btn:hover {
+  background: linear-gradient(135deg, #935C22, #5C3A12);
+  border-color: #E6C587;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35), 0 0 12px rgba(200, 162, 97, 0.4);
+  transform: translateY(-2px);
+}
+
+.discord-icon {
+  width: 22px;
+  height: 22px;
+  fill: #FCEFD2; 
+  transition: transform 0.3s ease;
+}
+
+.discord-parchment-btn:hover .discord-icon {
+  transform: scale(1.1);
+}
+
+.notice p {
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<header class="bar">
+  <a href="index.html">トップへ戻る</a>
+</header>
+
+<div class="notice">
+  <p class="notice-label">✦ ANNOUNCEMENT #3✦</p>
+  <h2 class="notice-title"><strong>リーグ振り分け&参加チーム公開</strong></h2>
+  <p class="notice-date">更新日:2026年11月22日</p>
+
+  <div class="notice-body">
+    <h2 class="notice-lead">✦ 予選リーグ形式の変更について ✦</h2>
+    <div class="notice-deadline">
+    <h2 style="text-align: center; margin-top: 8px;"><strong>参加チーム数の確定に伴い<br>予選リーグの形式を一部変更いたしました。</strong></h2>
+
+    <p style="margin-top: 24px; margin-bottom: 0px;">
+      <strong>■ 変更対象ブロック</strong>
+      <br>シリウス　　/　　プロキオン　　/　　ポラリス<br>
+      <br><strong>■ 対戦形式の変更</strong><br>
+  3チームによる総当たり戦を実施いたします。<br>
+  <br>
+  <strong>■ 試合ルールの変更</strong><br>
+  従来のBo3（2本先取）ではなく、<strong>全3試合実施の「3本勝負」</strong>へと変更になります。<br>
+  全試合Loser's Map Pick形式で行います。<br>
+  <br>
+  <strong>■ 本戦進出条件</strong><br>
+  各ブロックの上位2チーム（1位・2位）が本戦へ進出いたします。<br>
+  <small>※勝敗数が並んだ場合は、以下の優先順位で順位を決定いたします。<br>
+  ① 獲得MAP数 ＞ ② ノックアウト本数 ＞ ③ 抽選</small>
+  <br><a href="bracket.html">※リーグ詳細は公式ページの対戦表よりご確認下さい。</a>
+    </p>
+    </div>
+
+    <h2 class="notice-lead"style="margin-bottom: 8px;">✦ 参加チームを公開しました！ ✦</h2>
+    <p>本大会に出場する全チームのメンバー情報を公開いたしました。
+      <br>大会公式web参加チームページよりご覧いただけます
+    </p>
+    <a class="notice-button" href="teams.html">✎ 参加チームページへ進む</a>
+    
+    <p class="divider-text" style="margin-top: 0px;"></p>
+    <h2 class="notice-lead"style="margin-bottom: 8px;">✦ 11月21日に予選リーグの振り分け配信を行いました ✦</h2>
+    <p><strong>11月21日(土)</strong>に実施いたしました<strong>「予選リーグ組み合わせ抽選配信」</strong>をご視聴いただいた皆様、誠にありがとうございました！
+      <br>配信内にて決定した各ブロックの<strong>振り分け結果は<a href="bracket.html">対戦表ページ</a></strong>にてご確認いただけます。
+    </p>
+    <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; max-width: 800px; margin: 0 auto;">
+  <iframe
+    src="https://www.youtube.com/embed/V5YWfubxDrA"
+    title="【スプラトゥーン】GranDreamCup/チーム紹介＆リーグ振り分けくる！〖GranDream/GraDre〗"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 8px;"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+    <p class="divider-text"></p>
+    <p style="margin-top: 24px;">
+        ルールや対戦表についてご不明な点がございましたら、お気軽に運営メンバーまでお問い合わせください。
+    <br>残り約1週間となりましたが出場チームの皆様は当日に向けてご準備のほどよろしくお願いいたします。
+    <br>皆様の熱い戦いを運営一同楽しみにしております！
+    </p>
+    <p><a href="https://x.com/GranDream_info">GranDream</a></p>
+    
+
+  </div>
+</div>
+
+</body>
+
+<footer>&copy; 2026 GranDream 編集部</footer>
